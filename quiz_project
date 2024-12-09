@@ -1,0 +1,58 @@
+from string import ascii_lowercase
+#create a welcome page for quiz program
+# Formatting Variables
+format_output = "\033[47m\033[30m"
+format_reset = "\033[0m"
+def welcome():
+    print("WELCOME TO QUIZ APPLICATION PROGRAM ")
+    print(f"{format_output}-----------------------------------{format_reset}")
+    print(F"{format_output}          DESIGNED BY        {format_reset}")
+    print(f"{format_output}-----------------------------------{format_reset}")
+    print(F"{format_output}       CHIJIOKE .M. OGBONNA       {format_reset}")
+    print(f"{format_output}-----------------------------------{format_reset}")
+welcome()
+OPTION_QUESTS = {
+    " The first civil war in Africa was in what year?":
+        ["1955","1976","1956","1940"],
+    "How many countries are members of ECOWAS?":
+         ["15","20","34","12"],
+    " In what year did Nigerian civil War start?":
+        ["1967","1957","1960","1970"],
+    "Which of these countries is the first African country to host African Cup Nations(football)?":
+       ["Algeria","Nigeria","Togo","South Africa"],      
+    " Which of these countries is the first african country to have independence?":
+       ["Egypt","Ghana","Togo","Nigeria"]
+}
+
+for number, (quest, selected) in enumerate(OPTION_QUESTS.items(), start=1):
+    #selects questions from 1 to 5 on unordered
+    print(f"\nQuestion {number}:")
+    print(f"{quest}?")
+    
+    #sorted for the correct answer
+    correct_ans = selected[0]
+    total_score = 0
+    show_selected = dict(zip(ascii_lowercase, sorted(selected)))
+    for show_label, select in show_selected.items():
+        print(f"  {show_label}) {select}")
+        
+    
+    #Shows the correct answer documentation
+    show_answer = input("\n enter answer: ")
+    right_ans = show_selected.get(show_answer)
+    
+    if right_ans == correct_ans:
+        print("CORRECT ANSWER!!")
+        total_score += 10
+        list_score =[  ]
+        for num in list_score:
+            list_score.append({total_score})
+            print(num)
+        print (f"your score for this question: {total_score}") 
+       
+    else:
+        print(f"The answer is {correct_ans!r}, not {right_ans}")
+        
+        
+        
+    
