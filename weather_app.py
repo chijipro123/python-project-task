@@ -1,4 +1,4 @@
-import requests 
+import requests  # type: ignore
 import json
  
 API_KEY = 'your_api_key_here'
